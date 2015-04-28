@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "mpi.h"
 
-
 float x0=0.0, xf=1.0;
 int i;
 float n = 100000000.0
@@ -38,9 +37,11 @@ int main(int argc, char ** argv){
 		MPI_Send(&areas,1,MPI_FLOAT,0,0,MPI_COMM_WORLD);
 	else{
 		for(i=1;i<size;i++){
-			
-			MPI_Recv();
+					
+			MPI_Recv(&temp,1,MPI_FLOAT,MPI_ANY_SOURCE,0,MPI_COMM_WORLD,&status);
+			areas+=temp;
 		}
+		printf("EL area es %f\nRecibida de %i\n",areas,status.MPI_SOURCE);
 
 	}
 	

@@ -1,0 +1,82 @@
+[labintel7@maquina07 Joss]$ cp mpi1.c mpi2.c
+[labintel7@maquina07 Joss]$ vi mpi
+mpi1.c  mpi2.c  
+[labintel7@maquina07 Joss]$ vi mpi
+mpi1.c  mpi2.c  
+[labintel7@maquina07 Joss]$ vi mpi2.c 
+[labintel7@maquina07 Joss]$ mpicc mpi2.c 
+[labintel7@maquina07 Joss]$ mpirun -host localhost -np 16 ./a.out 
+Hola mundo soy 1 de 16 
+Hola mundo soy 2 de 16 
+Hola mundo soy 3 de 16 
+Hola mundo soy 6 de 16 
+Hola mundo soy 8 de 16 
+Hola mundo soy 9 de 16 
+Hola mundo soy 11 de 16 
+Hola mundo soy 12 de 16 
+Hola mundo soy 4 de 16 
+Hola mundo soy 14 de 16 
+Hola mundo soy 5 de 16 
+Hola mundo soy 10 de 16 
+Hola mundo soy 13 de 16 
+Hola mundo soy 15 de 16 
+Hola mundo soy 0 de 16 
+Hola mundo soy 7 de 16 
+[labintel7@maquina07 Joss]$ vi mpi2.c 
+[labintel7@maquina07 Joss]$ cp mpi2.c mpi3.c
+[labintel7@maquina07 Joss]$ vi mpi3.c
+[labintel7@maquina07 Joss]$ mpicc mpi3.c 
+mpi3.c: En la función ‘main’:
+mpi3.c:26:2: error: expected ‘;’ before ‘}’ token
+[labintel7@maquina07 Joss]$ vi mpi3.c
+[labintel7@maquina07 Joss]$ mpicc mpi3.c 
+[labintel7@maquina07 Joss]$ mpirun -host localhost -np 2 ./a.out 
+Hola mundo soy 0 de 2 
+Hola mundo soy 1 de 2 
+Dato enviado en proceso 0 :> 0Dato recibido es :> -1272458368 [labintel7@maquina07 Joss]$ mpirun -host local
+[labintel7@maquina07 Joss]$ mpicc mpi3.c 
+[labintel7@maquina07 Joss]$ mpirun -host localhost -np 2 ./a.out 
+Hola mundo soy 0 de 2 
+Hola mundo soy 1 de 2 
+Dato enviado en proceso 0 :> 0Dato recibido es :> -1421028480 Dato recibi 0 [labintel7@maquina07 Joss]$ mpir
+[labintel7@maquina07 Joss]$ mpicc mpi3.c 
+[labintel7@maquina07 Joss]$ mpirun -prepend-rank -host localhost -np 2 ./a.out 
+[0] Hola mundo soy 0 de 2 
+[0] 
+[0] Dato enviado en proceso 0 :> 0[1] Hola mundo soy 1 de 2 
+[1] 
+[1] Dato recibido es :> 112051072 [labintel7@maquina07 Joss]$ mpirun -prepend-rank -host localhost -np 2 ./a
+[labintel7@maquina07 Joss]$ mpicc mpi3.c 
+[labintel7@maquina07 Joss]$ mpirun -prepend-rank -host localhost -np 2 ./a.out 
+[0] Hola mundo soy 0 de 2 
+[1] Hola mundo soy 1 de 2 
+[0] 
+[0] Dato enviado en proceso 0 :> 3.140000[1] 
+[1] Dato recibido es :> 3.140000 [labintel7@maquina07 Joss]$ mpirun -prepend-rank -host localhost -np 3 ./a.out 
+[2] Hola mundo soy 2 de 3 
+[1] Hola mundo soy 1 de 3 
+[0] Hola mundo soy 0 de 3 
+[0] 
+[0] Dato enviado en proceso 0 :> 3.140000[1] 
+[1] Dato recibido es :> 3.140000 [labintel7@maquina07 Joss]$ 
+[labintel7@maquina07 Joss]$ mpirun -prepend-rank -host localhost -np 16 ./a.out  
+[6] Hola mundo soy 6 de 16 
+[12] Hola mundo soy 12 de 16 
+[4] Hola mundo soy 4 de 16 
+[5] Hola mundo soy 5 de 16 
+[0] Hola mundo soy 0 de 16 
+[0] 
+[0] Dato enviado en proceso 0 :> 3.140000[9] Hola mundo soy 9 de 16 
+[10] Hola mundo soy 10 de 16 
+[7] Hola mundo soy 7 de 16 
+[1] Hola mundo soy 1 de 16 
+[1] 
+[1] Dato recibido es :> 3.140000 [15] Hola mundo soy 15 de 16 
+[2] Hola mundo soy 2 de 16 
+[11] Hola mundo soy 11 de 16 
+[14] Hola mundo soy 14 de 16 
+[13] Hola mundo soy 13 de 16 
+[3] Hola mundo soy 3 de 16 
+[8] Hola mundo soy 8 de 16 
+[labintel7@maquina07 Joss]$ 
+

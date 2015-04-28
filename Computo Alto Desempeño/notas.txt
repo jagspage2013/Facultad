@@ -1,0 +1,17 @@
+EL dia de hoy veremos integración
+
+integración por metodo númerico
+
+n = 
+x0 = 
+xf= 
+dx = (xf -x0) / n 
+for ( i = 0 ; i<n ; i ++)
+areat = (f(xi + dx/2)) xi+=dx
+
+area *= dx 
+
+--------------------------
+
+
+
